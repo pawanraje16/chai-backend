@@ -19,7 +19,7 @@ const userSchema = new Schema(
             lowercase: true,
             trim: true,
         },
-        fullname: {
+        fullName: {
             type: String,
             required: true,
             trim: true,
@@ -59,7 +59,7 @@ userSchema.methods.isPasswordCorrect = async function (password){
   return await bcrypt.compare(password, this.password)
 }
 
-userSchema.mathods.generateAccessToken = function(){
+userSchema.methods.generateAccessToken = function(){
    return jwt.sign(
         {
             _id: this._id,
