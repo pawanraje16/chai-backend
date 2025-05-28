@@ -309,6 +309,8 @@ const updateUserCoverImage = asyncHandler(async(req, res) => {
    if(!coverImageLocalPath) {
       throw new ApiError(400, "Cover Image file is missing")
    }
+    
+   //TODO: delete old image 
 
    const coverImage = await uploadOnCloudinary(coverImageLocalPath)
 
